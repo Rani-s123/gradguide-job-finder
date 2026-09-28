@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { API_BASE } from '../api.js'
 
 // Demo preset standing in for a real address autocomplete/geocode call.
 // "Main Campus" matches a coordinate the backend already knows about.
@@ -19,7 +20,7 @@ export default function CommuteBar({ selectedJobs }) {
     if (!coords) return
     setChecking(true)
     try {
-      const res = await fetch('/api/commute', {
+      const res = await fetch(`${API_BASE}/api/commute`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

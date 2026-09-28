@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { API_BASE } from '../api.js'
 
 export default function VisaCheckBar({ selectedJobs }) {
   const [cap, setCap] = useState(20)
@@ -10,7 +11,7 @@ export default function VisaCheckBar({ selectedJobs }) {
     if (selectedJobs.length === 0) return
     setChecking(true)
     try {
-      const res = await fetch('/api/visa-check', {
+      const res = await fetch(`${API_BASE}/api/visa-check`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

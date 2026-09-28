@@ -3,6 +3,7 @@ import Filters from './components/Filters.jsx'
 import JobList from './components/JobList.jsx'
 import VisaCheckBar from './components/VisaCheckBar.jsx'
 import CommuteBar from './components/CommuteBar.jsx'
+import { API_BASE } from './api.js'
 
 const JOB_TYPES = ['part-time', 'full-time', 'internship', 'casual']
 
@@ -22,7 +23,7 @@ export default function App() {
   const [selectedIds, setSelectedIds] = useState([])
 
   useEffect(() => {
-    fetch('/api/meta').then(r => r.json()).then(setMeta).catch(() => {})
+    fetch(`${API_BASE}/api/meta`).then(r => r.json()).then(setMeta).catch(() => {})
   }, [])
 
   useEffect(() => {
@@ -37,7 +38,7 @@ export default function App() {
     params.set('limit', '100')
 
     const t = setTimeout(() => {
-      fetch(`/api/jobs?${params.toString()}`)
+      fetch(`${API_BASE}/api/jobs?${params.toString()}`)
         .then(r => r.json())
         .then(data => {
           setJobs(data.results)
