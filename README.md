@@ -4,6 +4,8 @@ A job discovery tool for international students — part-time, full-time,
 internship, and casual roles (cafes, retail, delivery, tutoring), sourced
 by a scraper the author wrote from scratch.
 
+**Live Demo:** [https://gradguide-job-finder.vercel.app/](https://gradguide-job-finder.vercel.app/)  
+**Live API & Swagger Docs:** [https://gradguide-job-finder.onrender.com/docs](https://gradguide-job-finder.onrender.com/docs)  
 **Video walkthrough:** [Watch walkthrough.mp4 (720p HD)](walkthrough.mp4) — full video walkthrough included directly in this repository covering scraper architecture, live multi-type job discovery, and all 3 international student features.
 
 ## What's in here
